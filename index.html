@@ -126,6 +126,17 @@
     color: var(--muted); display: flex; align-items: center; gap: 7px;
   }
   .story-visual .vid-label::before { content: '▶'; font-size: 0.6rem; color: var(--charcoal); }
+  .vid-label .sample-badge {
+    margin-left: auto;
+    background: #E8F4FD;
+    color: #2980B9;
+    font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    border: 1px solid #AED6F1;
+  }
 
   /* stats row */
   .stats-row {
@@ -238,7 +249,7 @@
       <p>The old way: tracking specs lived in Notion docs, misaligned between engineering, product, and data. We replaced it with a code-based spec viewer — events defined generically, then layered with per-feature and per-client coverage. PMs, engineers, and analysts now look at the same source of truth. Enables reliable A/B testing and ROI measurement for every new feature across 200+ partners.</p>
     </div>
     <div class="story-visual">
-      <div class="vid-label">Demo — Tracking Plan Viewer</div>
+      <div class="vid-label">Sample E-COM — Tracking Plan Viewer Demo</div>
       <video preload="metadata">
         <source src="portfolio_assets/demo-tracking.mp4" type="video/mp4">
       </video>
@@ -253,7 +264,7 @@
       <p>With a clean data foundation in place, we built a standardized metrics layer on top of Kimball-style dbt models. Every KPI — from partner-facing AOV to internal recommendation rates — has one consistent definition visible across all BI surfaces, dashboards, and AI agent context. No more conflicting numbers between teams.</p>
     </div>
     <div class="story-visual">
-      <div class="vid-label">Demo — AOV Metrics Layer</div>
+      <div class="vid-label">Sample E-COM — AOV Metrics Layer Demo</div>
       <video preload="metadata">
         <source src="portfolio_assets/aov-metrics.mp4" type="video/mp4">
       </video>
