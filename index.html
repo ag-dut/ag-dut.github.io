@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agata Dutkiewicz — Portfolio</title>
+<style>
+  :root {
+    --white: #FFFFFF;
+    --bg: #F5F5F5;
+    --charcoal: #2C2C2C;
+    --dark: #1A1A1A;
+    --muted: #666666;
+    --light-muted: #999999;
+    --border: #E0E0E0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--dark); font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+
+  /* ── HERO ─────────────────────────────────────────────── */
+  .hero {
+    background: var(--charcoal); color: var(--white);
+    padding: 64px 0 48px;
+  }
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+  .hero h1 {
+    font-size: 2.6rem; font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1.05;
+    white-space: nowrap;
+    margin-bottom: 12px;
+  }
+  .hero-tagline {
+    font-size: 0.88rem; color: #888888;
+    margin-bottom: 28px; letter-spacing: 0.01em;
+  }
+  /* nav sits inside hero, below title */
+  .hero-nav {
+    display: flex; gap: 0; border-top: 1px solid #444;
+    padding-top: 24px; margin-top: 4px;
+  }
+  .hero-nav a {
+    text-decoration: none; color: #AAAAAA;
+    font-size: 0.8rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 0 28px 0 0; margin-right: 28px;
+    border-right: 1px solid #444;
+    line-height: 1;
+    transition: color 0.15s;
+  }
+  .hero-nav a:last-child { border-right: none; }
+  .hero-nav a:hover { color: var(--white); }
+
+  /* ── STORY SECTION ────────────────────────────────────── */
+  .story {
+    padding: 72px 64px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .story-header {
+    margin-bottom: 56px;
+  }
+  .story-company {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--light-muted); margin-bottom: 10px;
+  }
+  .story-headline {
+    font-size: 2rem; font-weight: 800; color: var(--dark);
+    letter-spacing: -0.02em; line-height: 1.15; max-width: 640px;
+  }
+  .story-intro {
+    margin-top: 14px; font-size: 1rem; color: var(--muted);
+    max-width: 600px; line-height: 1.7;
+  }
+
+  /* ── ALTERNATING ROWS ─────────────────────────────────── */
+  .story-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .story-row.reverse { direction: rtl; }
+  .story-row.reverse > * { direction: ltr; }
+
+  .story-text {}
+  .story-text .eyebrow {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--light-muted); margin-bottom: 10px;
+  }
+  .story-text h3 {
+    font-size: 1.3rem; font-weight: 800; color: var(--dark);
+    letter-spacing: -0.01em; margin-bottom: 12px; line-height: 1.25;
+  }
+  .story-text p {
+    font-size: 0.92rem; color: var(--muted); line-height: 1.75;
+  }
+
+  .story-visual {
+    background: #1A1A1A;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+  }
+  .story-visual video {
+    width: 100%; display: block;
+  }
+  .story-visual .vid-label {
+    padding: 9px 18px 8px;
+    background: #F2F2F2;
+    font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--muted); display: flex; align-items: center; gap: 7px;
+  }
+  .story-visual .vid-label::before { content: '▶'; font-size: 0.6rem; color: var(--charcoal); }
+
+  /* stats row */
+  .stats-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; margin-bottom: 16px;
+  }
+  .stat-item { background: var(--white); padding: 22px 16px; text-align: center; }
+  .stat-num { font-size: 1.7rem; font-weight: 800; color: var(--dark); line-height: 1; margin-bottom: 5px; }
+  .stat-label { font-size: 0.72rem; color: var(--muted); }
+
+  .source-note { font-size: 0.72rem; color: var(--light-muted); margin-top: 6px; }
+  .source-note a { color: var(--light-muted); }
+
+  /* section divider */
+  .section-divider {
+    border: none; border-top: 1px solid var(--border); margin: 0;
+  }
+
+  footer {
+    text-align: center; padding: 40px;
+    border-top: 1px solid var(--border);
+    color: var(--light-muted); font-size: 0.8rem;
+  }
+  footer a { color: var(--light-muted); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<div class="hero-inner">
+  <h1>Data &amp; Analytics Portfolio</h1>
+  <div style="font-size:1rem; font-weight:600; color:#AAAAAA; margin-top:8px; margin-bottom:4px; letter-spacing:0.01em;">Agata Dutkiewicz</div>
+  <div class="hero-tagline">Data Analytics Lead &nbsp;·&nbsp; From data vision to shipped outcomes</div>
+  <nav class="hero-nav">
+    <a href="#fit">Fit Analytics</a>
+    <a href="#ay">ABOUT YOU</a>
+    <a href="#personal">Personal Projects</a>
+  </nav>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     FIT ANALYTICS
+══════════════════════════════════════════════════════════ -->
+<div id="fit">
+<div class="story">
+
+  <div class="story-header">
+    <div class="story-company">Fit Analytics · Analytics Engineering Lead · Jul 2025 – Present</div>
+    <div class="story-headline">Upgrading data &amp; analytics at a leading global fashion SaaS</div>
+    <div style="display:flex; align-items:center; gap:48px; margin-top:14px;">
+      <div class="story-intro" style="margin-top:0;">Fit Analytics is a leading global fashion SaaS, powering sizing and personalization for 200+ brands — CK, SHEIN, The North Face. I worked with the company to reimagine data governance and bring the analytics stack into the AI era — migrating and building new infrastructure from scratch using agentic AI, from governed tracking and Kimball-style dbt modeling to a standardized metrics layer.</div>
+      <img src="portfolio_assets/Fit analytics logo.png" alt="Fit Analytics" style="height:72px; object-fit:contain; flex-shrink:0; background:var(--bg); border-radius:8px; padding:8px;">
+    </div>
+  </div>
+
+  <!-- Row 1: text | tracking video -->
+  <div class="story-row">
+    <div class="story-text">
+      <div class="eyebrow">Step 1 — Tracking</div>
+      <h3>Tracking requirements as a code-based product</h3>
+      <p>The old way: tracking specs lived in Notion docs, misaligned between engineering, product, and data. We replaced it with a code-based spec viewer — events defined generically, then layered with per-feature and per-client coverage. PMs, engineers, and analysts now look at the same source of truth. Enables reliable A/B testing and ROI measurement for every new feature across 200+ partners.</p>
+    </div>
+    <div class="story-visual">
+      <div class="vid-label">Demo — Tracking Plan Viewer</div>
+      <video preload="metadata">
+        <source src="portfolio_assets/demo-tracking.mov" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- Row 2: metrics video | text (reverse) -->
+  <div class="story-row reverse">
+    <div class="story-text">
+      <div class="eyebrow">Step 2 — Metrics Layer</div>
+      <h3>One definition per KPI, across every surface</h3>
+      <p>With a clean data foundation in place, we built a standardized metrics layer on top of Kimball-style dbt models. Every KPI — from partner-facing AOV to internal recommendation rates — has one consistent definition visible across all BI surfaces, dashboards, and AI agent context. No more conflicting numbers between teams.</p>
+    </div>
+    <div class="story-visual">
+      <div class="vid-label">Demo — AOV Metrics Layer</div>
+      <video preload="metadata">
+        <source src="portfolio_assets/aov-metrics.mov" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT YOU
+══════════════════════════════════════════════════════════ -->
+<div id="ay">
+<div class="story">
+
+  <div class="story-header">
+    <div class="story-company">ABOUT YOU · Product Analytics Lead · Aug 2017 – Nov 2024 · 7 years</div>
+    <div class="story-headline">From messy tracking to AdTech powerhouse</div>
+    <div style="display:flex; align-items:center; gap:48px; margin-top:14px;">
+      <div class="story-intro" style="margin-top:0;">Seven years at ABOUT YOU — from Junior Fashion Editor to Product Analytics Lead through the company's IPO. I built the behavioural analytics data foundation: unified tracking for 45M users, customer data infrastructure for personalization, and the analytics layer that ultimately powered a retail media ecosystem generating significant incremental revenue for 100+ brands across Europe.</div>
+      <img src="portfolio_assets/AY logo.png" alt="ABOUT YOU" style="height:72px; object-fit:contain; flex-shrink:0; background:var(--bg); border-radius:8px; padding:8px;">
+    </div>
+  </div>
+
+  <!-- Row 1: text | sponsored products video -->
+  <div class="story-row">
+    <div class="story-text">
+      <div class="eyebrow">The Foundation — Sponsored Products</div>
+      <h3>CPC-based ad campaigns powered by clean tracking data</h3>
+      <p>Sponsored Products let brand partners boost product visibility in ABOUT YOU's personalized category rankings — mixed directly into the organic sorting algorithm across 26 European markets. I owned the data pipelines delivering ROAS, CTR, CR, and attribution reporting to 100+ brands — making performance data reportable, attributable, and scalable across all markets.</p>
+    </div>
+    <div class="story-visual">
+      <div class="vid-label">Sponsored Products — Public Product Overview (docs.partner.aboutyou.com)</div>
+      <video preload="metadata">
+        <source src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FY8oZ3Vo4FI5q8bX0AiSf%2Fuploads%2FmJtd91PJlNwtdgHKD10Z%2FSeller%20Center%20Sponsored%20Products%20Introduction.mp4?alt=media&token=0080783f-ec57-4042-a763-47486991d4be" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- Row 2: sponsored content video | text -->
+  <div class="story-row reverse">
+    <div class="story-text">
+      <div class="eyebrow">Full Funnel — Sponsored Content</div>
+      <h3>CPM onsite placements completing the advertising stack</h3>
+      <p>Sponsored Content added brand awareness campaigns on top of the conversion-focused Sponsored Products — completing a full-funnel retail media offering. CPM-based placements across all key onsite locations, countries, and genders. I built the data layer that tracked impressions, measured CPM performance, and delivered it all back to partners as a consistent, trusted reporting surface.</p>
+    </div>
+    <div class="story-visual">
+      <div class="vid-label">Sponsored Content — Public Product Overview (docs.partner.aboutyou.com)</div>
+      <video preload="metadata">
+        <source src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FY8oZ3Vo4FI5q8bX0AiSf%2Fuploads%2FNR7VZsm0CSCYMXRquB5P%2FSponsored%20Content%20Introduction%20-%2010_25.mp4?alt=media&token=ed823bc2-1391-4c41-82dc-648ee6b876f0" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- PERSONAL PROJECTS -->
+<div id="personal">
+<div class="story">
+
+  <div class="story-header">
+    <div class="story-company">Personal Projects</div>
+    <div class="story-headline">Property ROI Calculator</div>
+    <div class="story-intro">Applying AI agentic skills beyond the workplace — building personalized, impactful tools using the same approach as at work.</div>
+  <div class="story-row">
+    <div class="story-text">
+        <p>Interactive calculator modelling property purchase scenarios — mortgage payments, net cash flow, gross yield, equity growth, and payoff year. Built to make informed decisions without relying on a spreadsheet.</p>
+    </div>
+    <div class="story-visual">
+      <div class="vid-label">Demo — Investment Dashboard</div>
+      <video preload="metadata">
+        <source src="portfolio_assets/investment-dash.mov" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<footer>
+  Agata Dutkiewicz · Berlin · <a href="https://linkedin.com/in/agata-d-1294a7152">LinkedIn</a>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(v => { v.muted = true; v.loop = true; v.playsInline = true; });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.play().catch(() => {});
+        else entry.target.pause();
+      });
+    }, { threshold: 0.3 });
+    videos.forEach(v => observer.observe(v));
+  });
+</script>
+</body>
+</html>
